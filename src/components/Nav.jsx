@@ -13,19 +13,14 @@ import { StateContext } from "../service/content/Context";
 import { useSelector } from "react-redux";
 
 const Nav = () => {
-
   const nav = useNavigate();
 
   const scrollTop = () => {
-
-    window.scrollTo(
-      {
-        top: 0,
-        behavior: "smooth"
-      }
-    );
-    
-  }
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   const { homeRef } = useContext(StateContext);
   const toHome = homeRef.current;
 
@@ -92,7 +87,6 @@ const Nav = () => {
         </div>
       </div>
       <div
-        onClick={activeHandler}
         className={`side-nav fixed top-0 left-0  translate-x-[-20rem] w-[16rem] z-50 h-full bg-gray-300 transition-all     duration-500${
           !active ? "hidden" : " translate-x-[0]"
         }`}
@@ -100,7 +94,9 @@ const Nav = () => {
         <ul className="flex justify-center h-full text-btn-text font-[500] text-lg mx-5 font-para items-stretch flex-col">
           <li className="bg-bg shadow-lg flex mx-auto w-full justify-between py-1 px-4 items-center rounded-full mb-4 md:hidden">
             <input
-              autoFocus
+            autoFocus
+              value={search}
+              onChange={searchHandler}
               type="text"
               placeholder="Search products here..."
               className="focus:outline-none bg-transparent flex-1 font-para"
@@ -114,10 +110,7 @@ const Nav = () => {
 
           <Link to={"/"}>
             <li
-              onClick={() =>
-                
-                scrollTop()
-              }
+              onClick={() => scrollTop()}
               className="my-3 px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
             >
               Home
@@ -172,7 +165,7 @@ const Nav = () => {
 
         <div className="top-0 right-0 absolute mr-3 mt-5">
           <div
-            onChange={activeHandler}
+            onClick={activeHandler}
             className={`relative flex  justify-center bg-btn p-5 rounded-full  active:p-4 transition-all duration-150 active:scale-75 ${
               active ? "nav-active" : ""
             }`}

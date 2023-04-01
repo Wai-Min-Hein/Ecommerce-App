@@ -13,6 +13,8 @@ import MyCart from "./Pages/MyCart";
 import Fav from "./Pages/Fav";
 import Detail from "./Pages/Detail";
 
+import '../node_modules/animate.css/animate.min.css';
+
 const App = () => {
   return (
     <div className="container mx-auto relative">

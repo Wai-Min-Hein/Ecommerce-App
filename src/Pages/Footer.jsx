@@ -10,18 +10,18 @@ const Footer = () => {
   const {footerRef} = useContext(StateContext)
   return (
     <footer ref={footerRef} className="pt-[6rem] pb-[2rem]">
-      <div class=" xl:flex">
-        <div class=" flex justify-center items-start gap-5 mb-8">
+      <div className=" xl:flex">
+        <div className=" flex justify-center items-start gap-5 mb-8">
           <div className="basis-[55%]">
-            <h1 class="logo-holder font-para text-3xl font-[700] mb-3">
+            <h1 className="logo-holder font-para text-3xl font-[700] mb-3">
               Shopio
             </h1>
-            <p class="text-lg ">
+            <p className="text-lg ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis
               id fames dolor.
             </p>
           </div>
-          <div class="flex gap-2">
+          <div className="flex gap-2">
             <button className="text-3xl text-btn">
               <BsFacebook />
             </button>
@@ -37,9 +37,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="xl:flex-1 md:w-[75%] lg:w-[50%] mx-auto flex justify-between items-start text-lg">
-          <div class=" flex flex-col">
-            <h3 class="col-title text-header text-xl font-[500]">Info</h3>
-            <nav class="col-list">
+          <div className=" flex flex-col">
+            <h3 className="col-title text-header text-xl font-[500]">Info</h3>
+            <nav className="col-list">
               <ul>
                 <li>
                   <a href="#">Formats</a>
@@ -57,9 +57,9 @@ const Footer = () => {
               </ul>
             </nav>
           </div>
-          <div class="flex flex-col">
-            <h3 class="col-title text-header text-xl font-[500]">Resources</h3>
-            <nav class="col-list">
+          <div className="flex flex-col">
+            <h3 className="col-title text-header text-xl font-[500]">Resources</h3>
+            <nav className="col-list">
               <ul>
                 <li>
                   <a href="#">Developer API</a>
@@ -73,9 +73,9 @@ const Footer = () => {
               </ul>
             </nav>
           </div>
-          <div class="col flex flex-col">
-            <h3 class="col-title text-header text-xl font-[500]">Company</h3>
-            <nav class="col-list">
+          <div className="col flex flex-col">
+            <h3 className="col-title text-header text-xl font-[500]">Company</h3>
+            <nav className="col-list">
               <ul>
                 <li>
                   <a href="#">About Us</a>
@@ -93,7 +93,7 @@ const Footer = () => {
             </nav>
           </div>
         </div>
-        {/* <div class="copyright">© 2022 – All Rights Reserved.</div> */}
+        {/* <div className="copyright">© 2022 – All Rights Reserved.</div> */}
       </div>
     </footer>
   );

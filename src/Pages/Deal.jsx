@@ -34,7 +34,7 @@ const Deal = () => {
   return (
     <div ref={dealRef} className="pt-[10rem]">
 
-<div className="bg-[url('/img/bg.png')] rounded-lg flex flex-wrap justify-between items-center ">
+<div className="bg-[url('/img/bg.png')] rounded-lg sm:flex flex-wrap justify-between items-center ">
       <div className="text-white basis-[30%] lg:basis-[27%] xl:basis-[20%] text-center">
         <h1 className="font-head text-4xl font-[900]">Deals of <br /> the day</h1>
         <p className="text-lg font-para mt-2">{time}</p>
@@ -42,7 +42,7 @@ const Deal = () => {
 
 
 
-      <div className="basis-[70%] sm:basis-[60%] md:basis-[50%] lg:basis-[73%] xl:basis-[80%]  w-[40%] lg:w-[70%] px-4 relative">
+      <div className="basis-[70%] sm:basis-[60%] md:basis-[50%] lg:basis-[73%] xl:basis-[80%] mx-auto w-[80%] sm:w-[40%] lg:w-[70%] px-4 relative">
         <div className="detail-prev bg-btn p-2 cursor-pointer text-para active:scale-75 duration-200 rounded-full text-xl absolute left-0 lg:left-1 top-[50%] z-10">
           <FiArrowLeft />
         </div>

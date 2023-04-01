@@ -37,7 +37,7 @@ const PopularCart = ({ laptop }) => {
     }
   }
   return (
-    <div className="bg-bg-second lg:px-6 px-2 py-4 shadow-lg rounded-md text-center mx-auto w-[300px]">
+    <div className="bg-bg-second lg:px-6 px-2 py-4 shadow-lg rounded-md text-center mx-auto w-[300px]  animate__animated animate__bounce">
       <img src={laptop?.thumbnail} className="h-[120px] mx-auto mb-2" alt="" />
 
       <h4>{laptop?.title.substring(0, 20)}...</h4>
