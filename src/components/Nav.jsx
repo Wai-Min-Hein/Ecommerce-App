@@ -13,27 +13,34 @@ import { StateContext } from "../service/content/Context";
 import { useSelector } from "react-redux";
 
 const Nav = () => {
-  const {homeRef} = useContext(StateContext)
-const toHome = homeRef.current
 
-const {popularRef} = useContext(StateContext)
-const toPopular = popularRef.current
-const {featureRef} = useContext(StateContext)
-const toFeature = featureRef.current
-const {dealRef} = useContext(StateContext)
-const toDeal = dealRef.current
-const {comingRef} = useContext(StateContext)
-const toComing = comingRef.current
-
-const {footergRef} = useContext(StateContext)
-const toFooter = comingRef.current
-
-
-
-
-
-  
   const nav = useNavigate();
+
+  const scrollTop = () => {
+
+    window.scrollTo(
+      {
+        top: 0,
+        behavior: "smooth"
+      }
+    );
+    
+  }
+  const { homeRef } = useContext(StateContext);
+  const toHome = homeRef.current;
+
+  const { popularRef } = useContext(StateContext);
+  const toPopular = popularRef.current;
+  const { featureRef } = useContext(StateContext);
+  const toFeature = featureRef.current;
+  const { dealRef } = useContext(StateContext);
+  const toDeal = dealRef.current;
+  const { comingRef } = useContext(StateContext);
+  const toComing = comingRef.current;
+
+  const { footergRef } = useContext(StateContext);
+  const toFooter = comingRef.current;
+
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState(false);
 
@@ -100,18 +107,67 @@ const toFooter = comingRef.current
             />
           </li>
           <Link to={"/all"}>
-            <li className="px-3 py-2 rounded-md bg-btn">All Product</li>
+            <li className="px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]">
+              All Product
+            </li>
           </Link>
 
-          
-          <li onClick={() => toHome.scrollIntoView({behavior: "smooth", block: 'start'})} className="my-3 px-3 py-2 rounded-md bg-btn">Home</li>
-          <li onClick={() => toPopular.scrollIntoView({behavior: "smooth"})} className="px-3 py-2 rounded-md bg-btn">Popular Products</li>
-          <li onClick={() => toFeature.scrollIntoView({behavior: "smooth"})} className="my-3 px-3 py-2 rounded-md bg-btn">
-            Featured Products
-          </li>
-          <li onClick={() => toDeal.scrollIntoView({behavior: "smooth"})} className="px-3 py-2 rounded-md bg-btn">Deal Products</li>
-          <li onClick={() => toComing.scrollIntoView({behavior: "smooth"})} className="my-3 px-3 py-2 rounded-md bg-btn">New Products</li>
-          <li onClick={() => toFooter.scrollIntoView({behavior: "smooth"})} className="px-3 py-2 rounded-md bg-btn">Footer</li>
+          <Link to={"/"}>
+            <li
+              onClick={() =>
+                
+                scrollTop()
+              }
+              className="my-3 px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
+            >
+              Home
+            </li>
+          </Link>
+
+          <Link to={"/"}>
+            <li
+              onClick={() => toPopular.scrollIntoView({ behavior: "smooth" })}
+              className="px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
+            >
+              Popular Products
+            </li>
+          </Link>
+
+          <Link to={"/"}>
+            <li
+              onClick={() => toFeature.scrollIntoView({ behavior: "smooth" })}
+              className="my-3 px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
+            >
+              Featured Products
+            </li>
+          </Link>
+
+          <Link to={"/"}>
+            <li
+              onClick={() => toDeal.scrollIntoView({ behavior: "smooth" })}
+              className="px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
+            >
+              Deal Products
+            </li>
+          </Link>
+
+          <Link to={"/"}>
+            <li
+              onClick={() => toComing.scrollIntoView({ behavior: "smooth" })}
+              className="my-3 px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
+            >
+              New Products
+            </li>
+          </Link>
+
+          <Link to={"/"}>
+            <li
+              onClick={() => toFooter.scrollIntoView({ behavior: "smooth" })}
+              className="px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
+            >
+              Footer
+            </li>
+          </Link>
         </ul>
 
         <div className="top-0 right-0 absolute mr-3 mt-5">
@@ -139,16 +195,16 @@ const toFooter = comingRef.current
       <div className="flex items-center justify-center ml-5 mr-2">
         <Link to={"/cart"}>
           <button className="bg-btn px-5 py-2  rounded-md mr-5 relative">
-            <FaShoppingCart className=" text-xl text-icon " /> <span className="absolute top-0 right-1">{carts.length}</span>
+            <FaShoppingCart className=" text-xl text-icon " />{" "}
+            <span className="absolute top-0 right-1">{carts.length}</span>
           </button>
         </Link>
         <Link to={"/favorite"}>
-
-        <button className="bg-btn px-4 py-2  mr-5 relative rounded-md">
-          <AiTwotoneHeart className=" text-xl  text-icon" /> <span className="absolute top-0 right-1">{favs.length}</span>
-        </button>
+          <button className="bg-btn px-4 py-2  mr-5 relative rounded-md">
+            <AiTwotoneHeart className=" text-xl  text-icon" />{" "}
+            <span className="absolute top-0 right-1">{favs.length}</span>
+          </button>
         </Link>
-
       </div>
     </nav>
   );
