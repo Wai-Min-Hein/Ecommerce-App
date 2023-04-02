@@ -1,5 +1,5 @@
 import React from "react";
-import "../dist/output.css";
+import "../css/output.css";
 import Nav from "./components/Nav";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";

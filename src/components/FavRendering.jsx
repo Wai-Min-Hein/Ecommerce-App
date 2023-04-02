@@ -3,6 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { delFromFav } from "../service/slice/CreateSlice";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const FavRendering = ({ fav }) => {
   const delHandler = () => {
@@ -76,13 +77,20 @@ const FavRendering = ({ fav }) => {
         <p className="text-btn">{stars}</p>
         <p className="text-btn">${fav?.price}</p>
       </div>
-      <div className="text-left mt-3">
+      <div className="text-left mt-3 flex gap-3">
         <button
           onClick={() => delHandler()}
           className="bg-btn text-para px-3 py-2 rounded-md"
         >
           <MdDelete className="text-xl " />
         </button>
+
+        <Link to={`/detail/${fav?.id}`}>
+        <button className="bg-btn px-3 py-2  text-lg font-para font-[500] text-icon rounded-md">
+          Detail
+        </button>
+        
+        </Link>
       </div>
     </div>
   );

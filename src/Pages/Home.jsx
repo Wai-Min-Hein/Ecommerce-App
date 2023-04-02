@@ -15,6 +15,11 @@ import StateContextProvider, { StateContext } from "../service/content/Context";
 
 import '../../node_modules/animate.css/animate.min.css'
 
+import laptpo from '../../img/laptop2.png'
+import phone from '../../img/phone3.jpg'
+import cloth from '../../img/clothe.jpg'
+import shoe from '../../img/shoe.jpg'
+
 const Home = () => {
   const { homeRef } = useContext(StateContext);
   return (
@@ -53,7 +58,7 @@ const Home = () => {
                 </div>
                 <div className="basis-[100%] md:basis-[40%] text-left animate__animated animate__backInRight">
                   <img
-                    src="../img/laptop2.png"
+                    src={laptpo}
                     className="w-full rounded-md"
                     alt=""
                   />
@@ -78,7 +83,7 @@ const Home = () => {
                 </div>
                 <div className=" basis-[100%] md:basis-[40%] text-left animate__animated animate__backInRight">
                   <img
-                    src="../img/phone3.jpg"
+                    src={phone}
                     className="h-[20rem] mx-auto"
                     alt=""
                   />
@@ -102,7 +107,7 @@ const Home = () => {
                 </div>
                 <div className=" basis-[100%] md:basis-[40%] text-left animate__animated animate__backInRight">
                   <img
-                    src="../img/clothe.jpg"
+                    src={cloth}
                     className="w-full rounded-md"
                     alt=""
                   />
@@ -126,7 +131,7 @@ const Home = () => {
                 </div>
                 <div className=" basis-[100%] md:basis-[40%] text-left animate__animated animate__backInRight">
                   <img
-                    src="../img/shoe.jpg"
+                    src={shoe}
                     className="w-full object-contain h-[25rem] rounded-lg"
                     alt=""
                   />

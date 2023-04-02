@@ -1,8 +1,13 @@
 import React, { useContext } from "react";
 import { StateContext } from "../service/content/Context";
+import gaming from '../../img/gaming3.png'
+import shoe from '../../img/shoe2.png'
+import phone from '../../img/phone3.png'
 
 const ComingPds = () => {
   const { comingRef } = useContext(StateContext);
+
+  
   return (
     <div ref={comingRef} className="pt-[9rem]">
       <div className="flex flex-wrap mb-8 gap-14 rounded-md justify-center items-center">
@@ -12,7 +17,7 @@ const ComingPds = () => {
             Gaming Concole
           </h4>
           <img
-            src="../../img/gaming3.png"
+            src={gaming}
             className="w-[14rem] translate-x-[-3rem] drop-shadow-[10px_15px_5px_rgba(0,0,0,0.5)]"
             alt=""
           />
@@ -23,7 +28,7 @@ const ComingPds = () => {
             Running Shoe
           </h4>
           <img
-            src="../../img/shoe2.png"
+            src={shoe}
             className="w-[10rem] translate-x-[2rem] rotate-[24deg]"
             alt=""
           />
@@ -38,7 +43,7 @@ const ComingPds = () => {
               Buy Now
             </button>
           </div>
-          <img src="../../img/phone3.png" className="h-[8rem]" alt="" />
+          <img src={phone} className="h-[8rem]" alt="" />
         </div>
       </div>
     </div>

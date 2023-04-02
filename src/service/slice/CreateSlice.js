@@ -1,13 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
+
+const cartItems =
+Cookies.get('cards') !== null
+    ? JSON.parse(Cookies.get('cards'))
+    : [];
+
+const favItems =
+localStorage.getItem('favs') !== null
+    ? JSON.parse(localStorage.getItem('favs'))
+    : [];
 
 
-const cartItems = localStorage.getItem('cards') !== null ? JSON.parse(localStorage.getItem('cards')): []
-const favItems = localStorage.getItem('favs') !== null ? JSON.parse(localStorage.getItem('favs')): []
+
+
+
+    
+   
+
 
 const initialState = {
   cart: cartItems,
   fav: favItems,
 };
+
+
 
 const cartSlice = createSlice({
   name: "counter",
@@ -19,42 +37,38 @@ const cartSlice = createSlice({
       const filterCart = state.cart.filter((c) => c.id !== item.id);
       const findCart = state?.cart?.find((c) => c.id === item.id);
 
-
       if (findCart) {
         state.cart = filterCart;
-        
-
       } else {
         state.cart.push(item);
-        
-
       }
-      localStorage.setItem('cards', JSON.stringify(state.cart))
-
+      // localStorage.setItem("cards", JSON.stringify(state.cart));
+      Cookies.set('cards', JSON.stringify(state.cart))
 
     },
     addQuantity: (state, action) => {
       const item = action.payload;
       const filterCart = state.cart.filter((c) => c.id !== item.id);
       const findCart = state?.cart?.find((c) => c.id === item.id);
-
+      
 
       if (findCart) {
         state.cart = [item, ...filterCart];
-        
       }
+      
 
       const filterZeroCart = state.cart.filter((c) => c.quantity > 0);
       const findZeroCart = state?.cart?.find((c) => c.quantity <= 0);
       if (findZeroCart) {
         state.cart = filterZeroCart;
-        
+      }
+      // localStorage.setItem("cards", JSON.stringify(state.cart));
 
-      }     
-      localStorage.setItem('cards', JSON.stringify(state.cart))
+      Cookies.set('cards', JSON.stringify(state.cart))
 
-
-
+      
+      
+      
     },
     addToFav: (state, action) => {
       const item = action.payload;
@@ -65,17 +79,17 @@ const cartSlice = createSlice({
       } else {
         state.fav.push(item);
       }
-      localStorage.setItem('favs', JSON.stringify(state.fav))
+
+      localStorage.setItem("favs", JSON.stringify(state.fav));
+
 
     },
     delFromFav: (state, action) => {
       const item = action.payload;
       const filterCart = state.fav.filter((c) => c.id !== item.id);
       state.fav = filterCart;
-      localStorage.setItem('favs', JSON.stringify(state.fav))
+      localStorage.setItem("favs", JSON.stringify(state.fav));
 
-
-      
     },
   },
 });

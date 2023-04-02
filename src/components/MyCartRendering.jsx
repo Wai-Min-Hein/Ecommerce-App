@@ -9,14 +9,14 @@ import Cookies from "js-cookie";
 const MyCartRendering = ({ cart }) => {
   const [quantity, setQuantity] = useState(1);
 
-  const incQuantity = () => setQuantity(quantity + 1);
-  const decQuantity = () => setQuantity(quantity - 1);
+  // const incQuantity = () => setQuantity(quantity + 1);
+  // const decQuantity = () => setQuantity(quantity - 1);
+  const incQuantity = () => setQuantity((prev) => prev + 1);
+  const decQuantity = () => setQuantity((prev) => prev - 1);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-
-
     dispatch(
       addQuantity({ ...cart, quantity, totalPrice: cart?.price * quantity })
     );

@@ -103,14 +103,14 @@ const Nav = () => {
             />
           </li>
           <Link to={"/all"}>
-            <li className="px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]">
+            <li onClick={activeHandler} className="px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]">
               All Product
             </li>
           </Link>
 
           <Link to={"/"}>
             <li
-              onClick={() => scrollTop()}
+              onClick={() => (scrollTop(), activeHandler())}
               className="my-3 px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
             >
               Home
@@ -119,7 +119,7 @@ const Nav = () => {
 
           <Link to={"/"}>
             <li
-              onClick={() => toPopular.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => (toPopular.scrollIntoView({ behavior: "smooth" }), activeHandler())}
               className="px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
             >
               Popular Products
@@ -128,7 +128,7 @@ const Nav = () => {
 
           <Link to={"/"}>
             <li
-              onClick={() => toFeature.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => (toFeature.scrollIntoView({ behavior: "smooth" }), activeHandler())}
               className="my-3 px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
             >
               Featured Products
@@ -137,7 +137,7 @@ const Nav = () => {
 
           <Link to={"/"}>
             <li
-              onClick={() => toDeal.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => (toDeal.scrollIntoView({ behavior: "smooth" }), activeHandler())}
               className="px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
             >
               Deal Products
@@ -146,7 +146,7 @@ const Nav = () => {
 
           <Link to={"/"}>
             <li
-              onClick={() => toComing.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => (toComing.scrollIntoView({ behavior: "smooth" }), activeHandler())}
               className="my-3 px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
             >
               New Products
@@ -155,7 +155,7 @@ const Nav = () => {
 
           <Link to={"/"}>
             <li
-              onClick={() => toFooter.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => (toFooter.scrollIntoView({ behavior: "smooth" }), activeHandler())}
               className="px-3 py-2 rounded-md bg-btn hover:scale-90 duration-150 active:translate-y-[-5px]"
             >
               Footer

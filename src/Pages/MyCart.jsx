@@ -9,7 +9,7 @@ const MyCart = () => {
   return (
     <div className="">
       <div className="mb-10">
-        <h1 className="text-header font-para text-2xl">
+        <h1 className="text-header font-para text-2xl  px-4 md:px-0">
           Total Price for all your products : $ {allTotal}
         </h1>
       </div>

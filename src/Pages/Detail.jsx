@@ -53,7 +53,6 @@ const Detail = () => {
 
   const ref = useRef();
   const [img, setImg] = useState(null)
-  console.log(img)
 
   return (
     <div className="mt-16 flex justify-between items-start">

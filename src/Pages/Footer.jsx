@@ -9,7 +9,7 @@ import { StateContext } from "../service/content/Context";
 const Footer = () => {
   const {footerRef} = useContext(StateContext)
   return (
-    <footer ref={footerRef} className="pt-[6rem] pb-[2rem]">
+    <footer ref={footerRef} className="pt-[6rem] pb-[2rem]  px-3 md:px-0">
       <div className=" xl:flex">
         <div className=" flex justify-center items-start gap-5 mb-8">
           <div className="basis-[55%]">

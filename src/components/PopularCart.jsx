@@ -19,7 +19,7 @@ const PopularCart = ({ laptop }) => {
   
 
   const findFavCart = favs.find((c) => c.id === laptop.id);
-  const findCart = carts.find((c) => c.id === laptop.id);
+  const findCart = carts?.find((c) => c.id === laptop.id);
 
   const [addCartActive, setAddCartActive] = useState(false);
   const activeHandler = () => {
