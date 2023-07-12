@@ -38,7 +38,7 @@ const StateContextProvider = ({children}) => {
   const featureRef = useRef()
   const dealRef = useRef()
   const comingRef = useRef()
-  const footergRef = useRef()
+  const footerRef = useRef()
 
 
 
@@ -46,7 +46,7 @@ const StateContextProvider = ({children}) => {
 
 
 
-    const data = {laptops, womanWatches, manWatches, motorcycles, lightings, allProducts, search, setSearch, homeRef, featureRef, dealRef, popularRef, comingRef, footergRef}
+    const data = {laptops, womanWatches, manWatches, motorcycles, lightings, allProducts, search, setSearch, homeRef, featureRef, dealRef, popularRef, comingRef, footerRef}
 
 
 

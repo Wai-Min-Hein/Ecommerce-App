@@ -45,7 +45,7 @@ const AllProducts = () => {
         ? allProductsData?.map((allProduct) => (
             <AllProductsRender key={allProduct.id} allProduct={allProduct} />
           ))
-        : items.length<= 0 ? <h1 className="text-head text-3xl font-para mt-24">No Products found</h1>: items?.map((allProduct) => (
+        : items?.length<= 0 ? <h1 className="text-head text-3xl font-para mt-24">No Products found</h1>: items?.map((allProduct) => (
           <AllProductsRender key={allProduct.id} allProduct={allProduct} />
         ))}
     </div>

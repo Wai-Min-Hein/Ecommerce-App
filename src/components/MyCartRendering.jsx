@@ -7,20 +7,19 @@ import { AiOutlineMinus } from "react-icons/ai";
 import Cookies from "js-cookie";
 
 const MyCartRendering = ({ cart }) => {
-  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
-  // const incQuantity = () => setQuantity(quantity + 1);
-  // const decQuantity = () => setQuantity(quantity - 1);
+  const [quantity, setQuantity] = useState(1);
   const incQuantity = () => setQuantity((prev) => prev + 1);
   const decQuantity = () => setQuantity((prev) => prev - 1);
 
-  const dispatch = useDispatch();
+  console.log(cart)
 
-  useEffect(() => {
-    dispatch(
-      addQuantity({ ...cart, quantity, totalPrice: cart?.price * quantity })
-    );
-  }, [quantity]);
+  // useEffect(() => {
+  //   dispatch(
+  //     addQuantity({ ...cart, quantity, totalPrice: cart?.price * quantity })
+  //   );
+  // }, [quantity]);
 
   const rating = Math.round(cart?.rating);
 
@@ -60,7 +59,16 @@ const MyCartRendering = ({ cart }) => {
       <div className="flex items-center justify-start mt-3 text-white">
         <button
           onClick={() => {
-            incQuantity();
+            {
+              incQuantity(),
+                dispatch(
+                  addQuantity({
+                    ...cart,
+                    quantity: cart?.quantity + 1,
+                    totalPrice: cart?.price * cart?.quantity,
+                  })
+                );
+            }
           }}
           className="mr-3 text-md  px-2 py-1 rounded-md bg-btn"
         >
@@ -68,7 +76,16 @@ const MyCartRendering = ({ cart }) => {
         </button>
         <button
           onClick={() => {
-            decQuantity();
+            {
+              decQuantity(),
+                dispatch(
+                  addQuantity({
+                    ...cart,
+                    quantity: cart?.quantity - 1,
+                    totalPrice: cart?.price * cart?.quantity,
+                  })
+                );
+            }
           }}
           className="mr-3 text-md  px-2 py-1 rounded-md bg-btn"
         >

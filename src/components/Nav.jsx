@@ -21,6 +21,8 @@ const Nav = () => {
       behavior: "smooth",
     });
   };
+
+ 
   const { homeRef } = useContext(StateContext);
   const toHome = homeRef.current;
 
@@ -33,8 +35,8 @@ const Nav = () => {
   const { comingRef } = useContext(StateContext);
   const toComing = comingRef.current;
 
-  const { footergRef } = useContext(StateContext);
-  const toFooter = comingRef.current;
+  const { footerRef } = useContext(StateContext);
+  const toFooter = footerRef.current;
 
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState(false);
@@ -68,7 +70,7 @@ const Nav = () => {
 
   return (
     <nav
-      className={`bg-bg flex items-center justify-between gap-5 z-50 mt-5 rounded-xl px-3 py-3 ${
+      className={`bg-bg flex items-center justify-between gap-5 z-50 mt-5 rounded-xl md:px-3 py-3 ${
         scrolled && "bg-nav sticky top-0 transition-all duration-200 shadow-xl"
       } `}
     >

@@ -55,9 +55,9 @@ const Detail = () => {
   const [img, setImg] = useState(null)
 
   return (
-    <div className="mt-16 flex justify-between items-start">
-      <div className=" basis-3/5 flex flex-col items-baseline justify-between">
-        <img src={img? img : product?.images[0]} className="h-[20rem] max-w-[25rem] rounded-md" alt="" />
+    <div className="mt-16 mb-8 lg:flex justify-between items-start mx-auto px-5 md:px-0">
+      <div className=" basis-40% flex flex-col items-baseline justify-between mb-8 lg:mb-0">
+        <img src={img? img : product?.images[0]} className="h-[20rem] max-w-[15rem] md:max-w-[18rem] lg:max-w-[25rem] rounded-md" alt="" />
         <div className="flex flex-wrap justify-center gap-3 items-center mt-10 object-contain">
         {
           product?.images?.map((img, i) => 
@@ -71,7 +71,8 @@ const Detail = () => {
         }
         </div>
       </div>
-      <div className="font-para self-stretch">
+
+      <div className="font-para self-stretch basis-[50%]">
         <h5 className=" text-para font-[700] text-2xl capitalize tracking-widest inline-block basis-2/5">
           {product?.title}
         </h5>
@@ -103,7 +104,9 @@ const Detail = () => {
               findCart ? "bg-red-500 text-white" : "bg-btn"
             }`}
           >
-            Add to Cart
+            {
+            !findCart? 'Add to Cart': 'Remove'
+          }
           </button>
 
           <button

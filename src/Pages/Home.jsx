@@ -13,12 +13,12 @@ import { FiArrowLeft } from "react-icons/fi";
 import { FiArrowRight } from "react-icons/fi";
 import StateContextProvider, { StateContext } from "../service/content/Context";
 
-import '../../node_modules/animate.css/animate.min.css'
+import "../../node_modules/animate.css/animate.min.css";
 
-import laptpo from '../../img/laptop2.png'
-import phone from '../../img/phone3.jpg'
-import cloth from '../../img/clothe.jpg'
-import shoe from '../../img/shoe.jpg'
+import laptpo from "../../img/laptop2.png";
+import phone from "../../img/phone3.jpg";
+import cloth from "../../img/clothe.jpg";
+import shoe from "../../img/shoe.jpg";
 
 const Home = () => {
   const { homeRef } = useContext(StateContext);
@@ -57,11 +57,7 @@ const Home = () => {
                   </button>
                 </div>
                 <div className="basis-[100%] md:basis-[40%] text-left animate__animated animate__backInRight">
-                  <img
-                    src={laptpo}
-                    className="w-full rounded-md"
-                    alt=""
-                  />
+                  <img src={laptpo} className="w-full rounded-md" alt="" />
                 </div>
               </div>
             </SwiperSlide>
@@ -82,11 +78,7 @@ const Home = () => {
                   </button>
                 </div>
                 <div className=" basis-[100%] md:basis-[40%] text-left animate__animated animate__backInRight">
-                  <img
-                    src={phone}
-                    className="h-[20rem] mx-auto"
-                    alt=""
-                  />
+                  <img src={phone} className="h-[20rem] mx-auto" alt="" />
                 </div>
               </div>
             </SwiperSlide>
@@ -106,11 +98,7 @@ const Home = () => {
                   </button>
                 </div>
                 <div className=" basis-[100%] md:basis-[40%] text-left animate__animated animate__backInRight">
-                  <img
-                    src={cloth}
-                    className="w-full rounded-md"
-                    alt=""
-                  />
+                  <img src={cloth} className="w-full rounded-md" alt="" />
                 </div>
               </div>
             </SwiperSlide>
